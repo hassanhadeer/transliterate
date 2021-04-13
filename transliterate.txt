@@ -1,0 +1,42 @@
+
+1. Convert lower case letters to upper case
+
+	> echo "test" | tr "[:lower:]" "[:upper:]"
+	
+	> echo "test" | tr "[a-z]" "[A-Z]"
+	
+	cat "test" | tr "[a-z]" "[A-Z]" >> "test2"
+
+2. Transform upper case letters to lower case.
+
+	> cat "test" | tr "[:upper:]" "[:lower:]"
+	
+	> echo "test" | tr "[A-Z]" "[a-z]"
+	cat "test" | tr "[A-Z]" "[a-z]" >> "test2"
+
+3. Replace non-matching characters.
+
+
+	> echo "test" | tr -c "t" "a"
+	cat "test" | tr -c "t" "a" >> "test2"
+
+4. Delete non-printable characters
+
+	>cat "test" | tr -cd "[:print:]" < test
+
+
+5. Delete characters
+
+	> cat "test" | tr -d "h"  >> "test2"
+	
+
+6. Squeezing characters
+
+	> echo "test" | tr -s " "
+	
+
+	Here you can replace the space character with any other character 
+
+	> cat "test" | tr -s " " ","
+	
+	>cat "test" | tr -s " " "\t"
